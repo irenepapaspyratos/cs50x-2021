@@ -4,8 +4,14 @@ Catch me if you can..!
 
 ## About
 
-I created this game in August 2021 for CS50x.
-It consists of a cat catching grasshoppers and each level is won as soon as all grasshoppers are gone.
+My game consists of a cat catching grasshoppers and each level is won as soon as all grasshoppers are gone.   
+
+The requirements:
+- Your project must use at least two sprites, at least one of which must not be a cat.
+- Your project must have at least three scripts total (i.e., not necessarily three per sprite).
+- Your project must use at least one conditional, at least one loop, and at least one variable.
+- Your project must use at least one custom block that you have made yourself (via Make a Block), which must take at least one input.
+- Your project should be more complex than most of those demonstrated in lecture.
 
 ## How To Start
 
