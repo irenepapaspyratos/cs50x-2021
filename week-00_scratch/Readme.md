@@ -6,7 +6,7 @@ Catch me if you can..!
 
 My game consists of a cat catching grasshoppers and each level is won as soon as all grasshoppers are gone.   
 
-The requirements:
+The requirements of [CS50x's pset-0](https://cs50.harvard.edu/x/2023/psets/0/):
 - Your project must use at least two sprites, at least one of which must not be a cat.
 - Your project must have at least three scripts total (i.e., not necessarily three per sprite).
 - Your project must use at least one conditional, at least one loop, and at least one variable.
@@ -28,3 +28,4 @@ After choosing the desired level with a mouse-click, you have to point with the 
 ### Hint
 
 Don't wait for the cat to finish eating before catching the next grasshopper... ;)
+
