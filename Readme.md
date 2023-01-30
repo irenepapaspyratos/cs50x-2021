@@ -8,7 +8,7 @@ I solved all labs and problems during 8 weeks in autumn 2021, but did not build 
 
 </br>
 
-You will learn NOTHING if you copy solutions without experiancing the journey yourself...
+You will learn NOTHING if you copy solutions without experiencing the journey yourself...
 
 </br>
 
