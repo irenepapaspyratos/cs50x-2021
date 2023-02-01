@@ -2,7 +2,7 @@
 
 https://cs50.harvard.edu/x/2023/psets/5/speller/
 
-For this problem, you’ll implement a program that spell-checks a file, a la the below, using a hash table.
+For this problem, you’ll implement a program that spell-checks a file, a la the below, using a hash table. (To adjust and submit: dictionary.c)
 ```
 $ ./speller texts/lalaland.txt
 MISSPELLED WORDS
