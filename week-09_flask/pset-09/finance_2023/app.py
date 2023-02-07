@@ -2,7 +2,7 @@ import os
 import datetime
 
 from cs50 import SQL
-from flask import Flask, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -367,10 +367,39 @@ def sell():
         # Generate sell.html
         return render_template("/sell.html", stocks=stocks)
 
+
 @app.route("/increase", methods=["GET", "POST"])
 @login_required
 def increase():
-    return apology("Not yet implemented", 501)
+    """Sell shares of stock"""
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+
+        # Ensure number of shares to sell is positive integer and doesn't exceed the posessed shares
+        if not request.form.get("cash") or request.form.get("cash") == "0" or request.form.get("cash").isdigit() == False:
+            return apology("must provide a positive number of whole monetary units to add", 400)
+
+        # Get values next needed
+        u_id = session['user_id']
+        curr_action = db.execute('SELECT id FROM actions WHERE action = ?', 'deposit')[0]['id']
+        deposit = float(request.form.get("cash"))
+        money = db.execute('SELECT cash FROM users WHERE id = ?', u_id)
+        new_money = float(money[0]['cash']) + deposit
+        dt = datetime.datetime.utcnow()
+        dt_date = dt.strftime("%Y-%m-%d")
+        dt_time = dt.strftime("%H:%M:%S")
+
+        # Insert initial default deposit to table transactions_utc
+        db.execute('INSERT INTO transactions_utc (user_id, symbol, date, time, action_id, shares, price) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                    u_id, "$", dt_date, dt_time, curr_action, new_money, 1.0)
+
+        # Update user's cash
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_money, u_id)
+
+    # Generate buy.html
+    return redirect("/")
+
 
 def errorhandler(e):
     """Handle error"""
