@@ -53,3 +53,5 @@ Implement a website via which users can “buy” and “sell” stocks.
         ```
 
 - A function, i.e. route, to allow users to add additional cash to their account.
+
+- Errorhandler
