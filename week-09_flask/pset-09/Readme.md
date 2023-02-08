@@ -4,6 +4,8 @@ https://cs50.harvard.edu/x/2023/psets/9/finance/
 
 Implement a website via which users can “buy” and “sell” stocks.
 
+Note, that this project won't work without an api key from `iexcloud.io`.
+
 ## My Additions
 
 - several templates
